@@ -3,8 +3,8 @@
 //Program: Pre-Competition
 //Hardware: Bolt #SB-33DF
 
-//Start
-//Bolt will say start across the LED's
+//Start & Say Start
+//Bolt will say start across the LED's and will say start out loud
 //Driver: Ethan Condon
 //Navigator: Justin Suiter
 
