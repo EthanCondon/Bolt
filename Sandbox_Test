@@ -1,7 +1,16 @@
-//Date: 1.13.2025
-//Program: Sandbox
+//Date: 1.10.2025
+//Program: Hello Square
 //Hardware: Bolt #SB-33DF
 
 async function startProgram() {
-
+ 	setMainLed({ r: 0, g: 0, b: 200 });
+	await speak("This is a test and only a test");
+	setSpeed(100);
+	await delay(1.55);
+	setSpeed(0);
+	await roll((getHeading() + 360), 100, 2);
+	setSpeed(100);
+	await delay(1.55);
+	setSpeed(0);
+	setMainLed({ r: 0, g: 255, b: 0});
 }
