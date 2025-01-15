@@ -4,7 +4,7 @@
 //Hardware: Bolt #SB-33DF
 
 //Start & Say Start
-//Bolt will say start across the LED's and will say start out loud
+//Bolt will say start across the LED's & say it out loud
 //Driver: Ethan Condon
 //Navigator: Justin Suiter
 async function startProgram() {
@@ -12,15 +12,14 @@ async function startProgram() {
 	await speak("Start", true);
 	await delay(2);
 	await scrollMatrixText('Start', { r: 66, g: 56, b: 255 }, 10, true);
-}
 
 
 //Red
 //Bolt LED will turn Red
 //Driver: Justin Suiter
 //Navigator: Ethan Condon
-
-
+setMainLed({ r: 255, g: 0, b: 0 })
+}
 
 
 
