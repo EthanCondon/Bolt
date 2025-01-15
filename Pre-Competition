@@ -18,17 +18,23 @@ async function startProgram() {
 //Bolt LED will turn Red
 //Driver: Justin Suiter
 //Navigator: Ethan Condon
-setMainLed({ r: 255, g: 0, b: 0 })
-}
+setMainLed({ r: 255, g: 0, b: 0 });
+
 
 
 
 //Forward & turn 90 degrees and forward again
 //Driver: Ethan Condon
 //Navigator: Justin Suiter
-
-
-
+	setSpeed(60);
+	await delay(2);
+	setSpeed(0);
+	await delay(1);
+	await roll((getHeading() + 90), 0, 2);
+	setSpeed(60);
+	await delay(2);
+	setSpeed(0);
+}
 
 //Play Sound
 //Driver: Justin Suiter
