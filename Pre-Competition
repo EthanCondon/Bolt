@@ -14,12 +14,12 @@ async function startProgram() {
 	await scrollMatrixText('Start', { r: 66, g: 56, b: 255 }, 10, true);
 
 
-
 //Red
 //Bolt LED will turn Red
 //Driver: Justin Suiter
 //Navigator: Ethan Condon
-	setMainLed({ r: 255, g: 0, b: 0 });
+setMainLed({ r: 255, g: 0, b: 0 });
+
 
 
 
@@ -40,4 +40,62 @@ async function startProgram() {
 //Driver: Justin Suiter
 //Navigator: Ethan Condon
 	await Sound.Animal.play(true);
+
+
+//Figure Eight
+//Driver: Ethan Condon
+//Navigator: Justin Suiter
+// Optimized for BOLT
+	setMainLed({ r: 0, g: 133, b: 202 });
+	await turn(243);
+	await rollDistance(243, 35, 7);
+	await rollDistance(231, 35, 4);
+	await rollDistance(194, 35, 7);
+	await rollDistance(157, 35, 7);
+	await rollDistance(117, 35, 7);
+	await rollDistance(99, 35, 7);
+	await rollDistance(125, 35, 7);
+	await rollDistance(143, 35, 4);
+	await rollDistance(187, 35, 7);
+	await rollDistance(244, 35, 7);
+	await rollDistance(257, 35, 4);
+	await rollDistance(281, 35, 7);
+	await rollDistance(342, 35, 7);
+	await rollDistance(37, 113, 7);
+	await rollDistance(39, 113, 7);
+	await rollDistance(40, 113, 7);
+	await rollDistance(32, 35, 4);
+	await rollDistance(2, 35, 7);
+	await rollDistance(306, 35, 7);
+	await rollDistance(249, 35, 6);
+	await comeToStop();
+	exitProgram();
+
+
+var MIN_SPEED = 5.0;
+var minSpeedSq = MIN_SPEED ** 2;
+
+async function comeToStop() {
+	stopRoll();
+
+	while ((getVelocity().x ** 2) + (getVelocity().y ** 2) > minSpeedSq) {
+		await delay(0.025);
+	}
+}
+
+async function turn(heading) {
+	setHeading(heading);
+	await delay(0.5);
+}
+
+async function rollDistance(heading, speed, distance) {
+	await roll(heading, speed);
+
+	var distanceSq = distance ** 2;
+	var startLocation = getLocation();
+
+	while (((getLocation().x - startLocation.x) ** 2) + ((getLocation().y - startLocation.y) ** 2) < distanceSq) {
+		await delay(0.025);
+	}
+}
 }
