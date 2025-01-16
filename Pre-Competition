@@ -34,8 +34,10 @@ async function startProgram() {
 	setSpeed(60);
 	await delay(2);
 	setSpeed(0);
-}
+
 
 //Play Sound
 //Driver: Justin Suiter
 //Navigator: Ethan Condon
+	await Sound.Animal.play(true);
+}
