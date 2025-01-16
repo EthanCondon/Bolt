@@ -1,13 +1,16 @@
-//Team Members: Ethan Condon & Justin Suiter
-//Date: 1.14.2025
-//Program: Pre-Competition
-//Hardware: Bolt #SB-33DF
+//Team Members: Justin Suiter & Ethan Condon
+//Date: 1.14.24
+//Programmer: Pre-Competition
+//Hardware: Bolt #SB-3DFF
 
-//Start & Say Start
-//Bolt will say start across the LED's & say it out loud
+//Begin Code
+async function startProgram() {
+
+/*
+//start
+//Bolt will say Start Across the LED's
 //Driver: Ethan Condon
 //Navigator: Justin Suiter
-async function startProgram() {
 	await setMainLed({ r:255, g: 0, b: 0});
 	await speak("Start", true);
 	await delay(2);
@@ -15,15 +18,13 @@ async function startProgram() {
 
 
 //Red
-//Bolt LED will turn Red
+//Bolts LED will Turn Red
 //Driver: Justin Suiter
 //Navigator: Ethan Condon
 setMainLed({ r: 255, g: 0, b: 0 });
 
 
-
-
-//Forward & turn 90 degrees and forward again
+//Forward & turn 90 degrees and Forward again
 //Driver: Ethan Condon
 //Navigator: Justin Suiter
 	setSpeed(60);
@@ -45,8 +46,8 @@ setMainLed({ r: 255, g: 0, b: 0 });
 //Figure Eight
 //Driver: Ethan Condon
 //Navigator: Justin Suiter
-// Optimized for BOLT
-	setMainLed({ r: 0, g: 133, b: 202 });
+
+setMainLed({ r: 0, g: 133, b: 202 });
 	await turn(243);
 	await rollDistance(243, 35, 7);
 	await rollDistance(231, 35, 4);
@@ -71,6 +72,59 @@ setMainLed({ r: 255, g: 0, b: 0 });
 	await comeToStop();
 	exitProgram();
 
+var MIN_SPEED = 5.0;
+var minSpeedSq = MIN_SPEED ** 2;
+async function comeToStop() {
+	stopRoll();
+	while ((getVelocity().x ** 2) + (getVelocity().y ** 2) > minSpeedSq) {
+		await delay(0.025);
+	}
+}
+async function turn(heading) {
+	setHeading(heading);
+	await delay(0.5);
+}
+async function rollDistance(heading, speed, distance) {
+	await roll(heading, speed);
+	var distanceSq = distance ** 2;
+	var startLocation = getLocation();
+	while (((getLocation().x - startLocation.x) ** 2) + ((getLocation().y - startLocation.y) ** 2) < distanceSq) {
+		await delay(0.025);
+	}
+}
+*/
+//Star
+//Driver: Justin Suiter
+//Navigator: Ethan Condon
+	// Optimized for BOLT
+// Optimized for BOLT
+	setMainLed({ r: 0, g: 133, b: 202 });
+	await turn(36);
+	await rollDistance(36, 113, 7);
+	await rollDistance(28, 113, 7);
+	await rollDistance(26, 35, 6);
+	await comeToStop();
+	await turn(130);
+	await rollDistance(130, 35, 4);
+	await rollDistance(177, 113, 7);
+	await rollDistance(174, 113, 7);
+	await rollDistance(172, 35, 6);
+	await comeToStop();
+	await turn(295);
+	await rollDistance(295, 113, 7);
+	await rollDistance(304, 113, 7);
+	await rollDistance(301, 35, 6);
+	await comeToStop();
+	await turn(78);
+	await rollDistance(78, 113, 7);
+	await rollDistance(91, 35, 12);
+	await comeToStop();
+	await turn(235);
+	await rollDistance(235, 113, 7);
+	await rollDistance(245, 35, 10);
+	await comeToStop();
+	exitProgram();
+}
 
 var MIN_SPEED = 5.0;
 var minSpeedSq = MIN_SPEED ** 2;
@@ -97,5 +151,8 @@ async function rollDistance(heading, speed, distance) {
 	while (((getLocation().x - startLocation.x) ** 2) + ((getLocation().y - startLocation.y) ** 2) < distanceSq) {
 		await delay(0.025);
 	}
-}
+
+
+
+	//End Program
 }
