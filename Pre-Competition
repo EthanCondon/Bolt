@@ -26,6 +26,14 @@ async function startProgram() {
 //Forward & turn 90 degrees and forward again
 //Driver: Ethan Condon
 //Navigator: Justin Suiter
+	setSpeed(60);
+	await delay(2);
+	setSpeed(0);
+	await delay(1);
+	await roll((getHeading() + 90), 0, 2);
+	setSpeed(60);
+	await delay(2);
+	setSpeed(0);
 }
 
 //Play Sound
