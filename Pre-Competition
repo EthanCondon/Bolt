@@ -19,7 +19,7 @@ async function startProgram() {
 //Bolt LED will turn Red
 //Driver: Justin Suiter
 //Navigator: Ethan Condon
-
+	setMainLed({ r: 255, g: 0, b: 0 });
 
 
 
