@@ -6,7 +6,7 @@
 //Begin Code
 async function startProgram() {
 
-/*
+
 //start
 //Bolt will say Start Across the LED's
 //Driver: Ethan Condon
@@ -92,7 +92,7 @@ async function rollDistance(heading, speed, distance) {
 		await delay(0.025);
 	}
 }
-*/
+
 //Star
 //Driver: Justin Suiter
 //Navigator: Ethan Condon
