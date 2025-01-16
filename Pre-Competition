@@ -8,6 +8,10 @@
 //Driver: Ethan Condon
 //Navigator: Justin Suiter
 async function startProgram() {
+	await setMainLed({ r:255, g: 0, b: 0});
+	await speak("Start", true);
+	await delay(2);
+	await scrollMatrixText('Start', { r: 66, g: 56, b: 255 }, 10, true);
 
 
 
