@@ -8,27 +8,21 @@
 //Driver: Ethan Condon
 //Navigator: Justin Suiter
 async function startProgram() {
-	await setMainLed({ r:255, g: 0, b: 0});
-	await speak("Start", true);
-	await delay(2);
-	await scrollMatrixText('Start', { r: 66, g: 56, b: 255 }, 10, true);
+
 
 
 //Red
 //Bolt LED will turn Red
 //Driver: Justin Suiter
 //Navigator: Ethan Condon
-setMainLed({ r: 255, g: 0, b: 0 })
-}
+
 
 
 
 //Forward & turn 90 degrees and forward again
 //Driver: Ethan Condon
 //Navigator: Justin Suiter
-
-
-
+}
 
 //Play Sound
 //Driver: Justin Suiter
