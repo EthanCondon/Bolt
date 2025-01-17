@@ -70,7 +70,6 @@ setMainLed({ r: 0, g: 133, b: 202 });
 	await rollDistance(306, 35, 7);
 	await rollDistance(249, 35, 6);
 	await comeToStop();
-	exitProgram();
 
 var MIN_SPEED = 5.0;
 var minSpeedSq = MIN_SPEED ** 2;
@@ -93,10 +92,10 @@ async function rollDistance(heading, speed, distance) {
 	}
 }
 
+
 //Star
 //Driver: Justin Suiter
 //Navigator: Ethan Condon
-	// Optimized for BOLT
 // Optimized for BOLT
 	setMainLed({ r: 0, g: 133, b: 202 });
 	await turn(36);
@@ -151,7 +150,6 @@ async function rollDistance(heading, speed, distance) {
 	while (((getLocation().x - startLocation.x) ** 2) + ((getLocation().y - startLocation.y) ** 2) < distanceSq) {
 		await delay(0.025);
 	}
-
 
 
 	//End Program
