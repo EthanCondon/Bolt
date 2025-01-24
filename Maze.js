@@ -1,7 +1,7 @@
 //Team Members: Justin Suiter & Ethan Condon
 //Date: 1.24.24
 //Programmer: Maze
-//Hardware: Bolt #SB-3DFF
+//Hardware: Bolt #SB-33DF
 
 //Begin Program
 async function startProgram() {
@@ -10,6 +10,8 @@ async function startProgram() {
 //Bolt will say Start Across the LED's + Say it out loud
 //Driver: Ethan Condon
 //Navigator: Justin Suiter
+	await speak("Start", true);
+	await scrollMatrixText("START", { r: 0, g: 0, b: 255 }, 15, true);
 
 //Green Checkpoint
 //LED's turn Green
