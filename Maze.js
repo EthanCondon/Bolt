@@ -17,15 +17,20 @@ async function startProgram() {
 //Driver: Justin Suiter
 //Navigator: Ethan Condon
 	setSpeed(60);
-	await delay(3);
+	await delay(2.85);
 	setSpeed(0);
-  await delay(.5);
+	await delay(.5);
 	setMainLed({ r: 0, g: 255, b: 0});
 //Sound #1 Checkpoint
 //Bolt makes sound of choice - Update Sound
 //Driver: Ethan Condon
 //Navigator: Justin Suiter
-
+	await delay(.5);
+	await roll((getHeading() + 90), 0, 1);
+	setSpeed(60);
+	await delay(2.05);
+	setSpeed(0);
+	await roll((getHeading()
 //Red Checkpoint
 //LED's turn Red
 //Driver: Justin Suiter
