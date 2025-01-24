@@ -12,12 +12,15 @@ async function startProgram() {
 //Navigator: Justin Suiter
 	await speak("Start", true);
 	await scrollMatrixText("START", { r: 0, g: 0, b: 255 }, 15, true);
-
 //Green Checkpoint
 //LED's turn Green
 //Driver: Justin Suiter
 //Navigator: Ethan Condon
-
+	setSpeed(60);
+	await delay(3);
+	setSpeed(0);
+  await delay(.5);
+	setMainLed({ r: 0, g: 255, b: 0});
 //Sound #1 Checkpoint
 //Bolt makes sound of choice - Update Sound
 //Driver: Ethan Condon
