@@ -17,7 +17,7 @@ async function startProgram() {
 //Driver: Justin Suiter
 //Navigator: Ethan Condon
 	setSpeed(60);
-	await delay(2.85);
+	await delay(3);
 	setSpeed(0);
 	await delay(.5);
 	setMainLed({ r: 0, g: 255, b: 0});
@@ -28,9 +28,15 @@ async function startProgram() {
 	await delay(.5);
 	await roll((getHeading() + 90), 0, 1);
 	setSpeed(60);
-	await delay(2.05);
+	await delay(2.25);
 	setSpeed(0);
-	await roll((getHeading()
+	await delay(.5);
+	await roll((getHeading() + 90), 0, 1);
+	await delay(.5);
+	setSpeed(60);
+	await delay(1);
+	setSpeed(0);
+	await Sound.Animal.play(true);
 //Red Checkpoint
 //LED's turn Red
 //Driver: Justin Suiter
