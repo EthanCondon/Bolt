@@ -74,7 +74,9 @@ async function startProgram() {
   // LED's turn Blue
   // Driver: Justin Suiter
   // Navigator: Ethan Condon
-
+	await delay(1);
+	await roll(-45, 60, 1);
+	await setMainLed({ r: 0, g: 0, b: 255 });
   // Finish & Say Finish
   // Bolt will say Finish Across the LED's
   // Driver: Ethan Condon
