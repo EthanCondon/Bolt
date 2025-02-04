@@ -65,24 +65,17 @@ async function startProgram() {
   // Sound #3 Checkpoint
   // Driver: Ethan Condon
   // Navigator: Justin Suiter
-	await delay(1);
-	await roll(90, 60, 1);
-	await delay(1);
-	await roll(0, 60, 1);
-	await Sound.Animal.Monkey.play(true);
+
   // Blue Checkpoint
   // LED's turn Blue
   // Driver: Justin Suiter
   // Navigator: Ethan Condon
-	await delay(1);
-	await roll(-45, 60, 1);
-	await setMainLed({ r: 0, g: 0, b: 255 });
+
   // Finish & Say Finish
   // Bolt will say Finish Across the LED's
   // Driver: Ethan Condon
   // Navigator: Justin Suiter
-	await delay(1);
-	await roll(0, 60, 1.3);
+
   await speak("Finish", true);
   await scrollMatrixText("FINISH", { r: 255, g: 255, b: 0 }, 15, true);
 }
