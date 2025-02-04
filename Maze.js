@@ -81,7 +81,8 @@ async function startProgram() {
   // Bolt will say Finish Across the LED's
   // Driver: Ethan Condon
   // Navigator: Justin Suiter
-
+	await delay(1);
+	await roll(0, 60, 1.3);
   await speak("Finish", true);
   await scrollMatrixText("FINISH", { r: 255, g: 255, b: 0 }, 15, true);
 }
